@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Responsive Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav><br><br><br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" class="search">
+    
+    <ul id="myUL" class="hidden">
+        <H2></H2>
+        <li><a href="#">Giggly</a></li>
+        <li><a href="#">Daffy</a></li>
+        <li><a href="#">Lazzat Bhara</a></li>
+        <li><a href="#">Bisco</a></li>
+        <li><a href="#">Regal</a></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
